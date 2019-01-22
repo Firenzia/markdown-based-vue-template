@@ -10,4 +10,6 @@ export default {
 </script>
 
 <style>
+@import './assets/css/markdown.css';
+@import './assets/css/reset.css';
 </style>

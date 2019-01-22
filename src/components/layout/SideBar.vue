@@ -1,6 +1,6 @@
 <template>
     <div class="side-bar">
-        <ul v-for="(item, index) in menu" :key="index" >
+        <ul v-for="(item, index) in menu" :key="index" class="menu">
             {{item.category | pipe}}
             <li v-for="(sub, index) in item.modules" :key="index">
                 <router-link :to= "'/doc/'+item.category+'/'+sub.link">
@@ -52,7 +52,17 @@ export default {
 </script>
 <style lang="scss" scoped>
     .side-bar{
-        width:300px;
+        width:20%;
         float: left;
+        padding:20px 20px 0 200px;
+        box-sizing: border-box;
+        .menu{
+            margin-bottom: 22px;
+            font-size:16px;
+            li{
+                padding:8px 0 2px 10px;
+                font-size:18px;
+            }
+        }
     }
 </style>

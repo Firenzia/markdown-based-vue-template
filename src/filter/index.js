@@ -8,7 +8,7 @@ const map = {
   'input': '输入框',
   'popup': '弹框',
 
-  'resouce': '资源',
+  'resource': '资源',
   'icon': '图标',
   'color': '颜色'
 }

@@ -1,6 +1,6 @@
 <template>
-    <div class="doc-area">This is doc area
-        <article v-html="content"></article>
+    <div class="doc-area">
+        <article v-html="content" class="markdown-body"></article>
     </div>
 </template>
 
@@ -27,5 +27,6 @@ export default {
     .doc-area{
         width:600px;
         float: left;
+        padding-top:20px;
     }
 </style>

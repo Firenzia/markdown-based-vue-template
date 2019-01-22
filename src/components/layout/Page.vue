@@ -19,7 +19,6 @@ export default {
   },
   computed: {
     showDemo () {
-      console.log(this.$route)
       return /showDemo/g.test(this.$route.fullPath)
     }
   },
