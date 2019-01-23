@@ -17,15 +17,12 @@ export default {
       let path = this.$route.path.replace('/doc', '')
       return markDownFile(`.${path}.md`)
     }
-  },
-  created () {
-    console.log(this.$route.path)
   }
 }
 </script>
 <style lang="scss" scoped>
     .doc-area{
-        width:600px;
+        width:800px;
         float: left;
         padding-top:20px;
     }

@@ -2,7 +2,7 @@
     <div>
       <Header/>
       <side-bar/>
-      <router-view/>
+      <Doc/>
       <Demo v-show="showDemo"/>
     </div>
 </template>
@@ -11,6 +11,7 @@
 import SideBar from './SideBar'
 import Demo from './Demo'
 import Header from './Header'
+import Doc from './Doc'
 
 export default {
   data () {
@@ -25,7 +26,8 @@ export default {
   components: {
     Header,
     SideBar,
-    Demo
+    Demo,
+    Doc
   }
 }
 </script>

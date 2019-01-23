@@ -5,55 +5,55 @@
 ### 使用方法
 ```js
 // 引入组件
-import { Input } from '@fql/lego'
+import { Input } from '@fruit/vine'
 
 // 注册组件
 components: {
-  LegoInput: Input
+  VineInput: Input
 }
 ```
 
 ### 插入内容
 通过 `slot="prepend"` 在输入框前面插入内容
 ```html
-<lego-input v-model="value" title="姓名" placeholder="请输入姓名"></lego-input>
+<vine-input v-model="value" title="姓名" placeholder="请输入姓名"></vine-input>
 ```
 
 通过 `slot="append"` 在输入框后面插入一个按钮
 ```html
-<lego-input v-model="value" placeholder="请输入姓名">
+<vine-input v-model="value" placeholder="请输入姓名">
   <!-- 插入一个文字按钮 -->
-  <lego-button type="text" slot="append">发送短信</lego-button>
+  <vine-button type="text" slot="append">发送短信</vine-button>
 
   <!-- 或者插入一个图标 -->
-  <lego-icon icon="info" slot="append"/>
-</lego-input>
+  <vine-icon icon="info" slot="append"/>
+</vine-input>
 ```
 
 ### 多行输入框
 通过设置 `type="textarea"` 显示一个多行输入框
 ```html
-<lego-input type="textarea"></lego-input>
+<vine-input type="textarea"></vine-input>
 ```
 
 ### 输入框组
 配合 `Group` 组件使用可以显示一个输入框组
 ```js
 // 引入输入框组
-import { Group } from '@fql/lego'
+import { Group } from '@fruit/vine'
 
 // 注册组件
 components: {
-  LegoGroup: Group
+  vineGroup: Group
 }
 ```
 
 ```html
-<lego-group>
-  <lego-input v-model="value4" title="姓名" placeholder="请输入姓名"></lego-input>
-  <lego-input v-model="value5" title="姓名" placeholder="请输入姓名"></lego-input>
-  <lego-input v-model="value6" title="姓名" placeholder="请输入姓名"></lego-input>
-</lego-group>
+<vine-group>
+  <vine-input v-model="value4" title="姓名" placeholder="请输入姓名"></vine-input>
+  <vine-input v-model="value5" title="姓名" placeholder="请输入姓名"></vine-input>
+  <vine-input v-model="value6" title="姓名" placeholder="请输入姓名"></vine-input>
+</vine-group>
 ```
 
 ### 参数列表

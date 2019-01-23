@@ -1,16 +1,16 @@
 # 使用
 
-介绍如何在项目中引用乐高组件
+介绍如何在项目中引用vine组件
 
 ### 按需引用
 每个组件都可以按以下的方式引入
 
 ```js
-import { Input } from '@fql/lego/lib/input/index'
-import '@fql/lego/lib/input/index.css'
+import { Input } from '@fruit/vine/lib/input/index'
+import '@fruit/vine/lib/input/index.css'
 
-import { Toast } from '@fql/lego/lib/toast/index'
-import '@fql/lego/lib/toast/index.css'
+import { Toast } from '@fruit/vine/lib/toast/index'
+import '@fruit/vine/lib/toast/index.css'
 
 // 引入更多组件...
 ```
@@ -28,9 +28,9 @@ npm install --save-dev babel-plugin-transform-import
 它是一个基于 [babel](http://babeljs.io/) 的插件，因此我们需要在 babel 的配置文件（通常是.babelrc）中增加以下内容：
 ```json
 "plugins": [["transform-import", {
-    "@fql/lego": {
-        "transform": "@fql/lego/lib/${member}/index",
-        "style": "@fql/lego/lib/${member}/index.css",
+    "@fruit/vine": {
+        "transform": "@fruit/vine/lib/${member}/index",
+        "style": "@fruit/vine/lib/${member}/index.css",
         "skipDefaultConversion": true,
         "kebabCase": true
     }
@@ -40,7 +40,7 @@ npm install --save-dev babel-plugin-transform-import
 
 接下来，我们就可以用下面的方式愉快地引用组件了：
 ```js
-import { Input, Toast, Switch, Dialog } from '@fql/lego'
+import { Input, Toast, Switch, Dialog } from '@fruit/vine'
 ```
 
 这样就简单多了，最后，你就可以继续阅读左侧菜单中的组件文档，查看Demo，了解它们的使用方法了！

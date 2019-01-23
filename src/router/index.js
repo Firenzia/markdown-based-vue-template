@@ -9,17 +9,22 @@ export default new Router({
     { path: '/',
       redirect: '/doc/specifications/install'
     },
+    // {
+    //   path: '/doc/:category',
+    //   name: 'page',
+    //   component: () => import(/* webpackChunkName: "about" */ '../components/layout/Page.vue'),
+    //   children: [
+    //     {
+    //       // UserProfile will be rendered inside User's <router-view>
+    //       // when /user/:id/profile is matched
+    //       path: ':module',
+    //       component: Doc
+    //     }]
+    // },
     {
-      path: '/doc/:category',
+      path: '/doc/:category/:module',
       name: 'page',
-      component: () => import(/* webpackChunkName: "about" */ '../components/layout/Page.vue'),
-      children: [
-        {
-          // UserProfile will be rendered inside User's <router-view>
-          // when /user/:id/profile is matched
-          path: ':module',
-          component: Doc
-        }]
+      component: () => import(/* webpackChunkName: "about" */ '../components/layout/Page.vue')
     },
     {
       path: '/demo/components/button',
