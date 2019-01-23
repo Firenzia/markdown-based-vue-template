@@ -6,20 +6,7 @@
 ![look](./public/img/look.png)
 
 ###  目录结构
-├─assets     
-│  ├─css       // reset.css markdown.css
-│  └─img
-├─components   // 页面布局组件
-│  └─layout
-├─config      // 全局菜单, 插件和过滤器配置
-├─filter      //过滤器
-├─markdown    // markdown格式的文字说明
-│  ├─components
-│  ├─resource
-│  └─specifications
-├─router      // 路由配置
-└─views       // 组件展示页面
-    └─components
+![comp](./public/img/tree.png)
 
 ### 实现
 1. 关于markdown 
@@ -64,13 +51,8 @@ export default {
 ```
 
 2. 组件划分
-├─components
-│  └─layout
-│          Demo.vue    
-│          Doc.vue       
-│          Header.vue   
-│          Page.vue
-│          SideBar.vue  
+![comp](./public/img/comp-tree.jpg)
+
 注：Demo组件用iframe嵌套页面，iframe的src通过computed和当前路由计算出来。
 ```html
 <template>
@@ -92,7 +74,7 @@ export default {
 ```
 
 
-3. 路由
+1. 路由
 如果想让 Doc区块根据url动态渲染，可以用嵌套路由
 ```html
 // page.vue
