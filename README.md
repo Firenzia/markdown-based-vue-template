@@ -51,9 +51,9 @@ export default {
 ```
 
 2. 组件划分
+   
 ![comp](./public/img/comp-tree.jpg)
 
-注：Demo组件用iframe嵌套页面，iframe的src通过computed和当前路由计算出来。
 ```html
 <template>
     <div>
@@ -72,7 +72,6 @@ export default {
       component: () => import(/* webpackChunkName: "about" */ '../components/layout/Page.vue')
     },
 ```
-
 
 1. 路由
 如果想让 Doc区块根据url动态渲染，可以用嵌套路由
@@ -101,3 +100,6 @@ export default {
 ```
 
 默认路由激活样式（可修改） .router-link-exact-active, .router-link-active
+
+4. 动态引入组件
+Demo组件用iframe嵌套页面，iframe的src通过computed和当前路由计算出来，从而实现动态引入。

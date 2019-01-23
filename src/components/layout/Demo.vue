@@ -1,14 +1,22 @@
 <template>
     <div class="demo">
-        <iframe src="/#/demo/components/button" frameborder="0" class="iframe"></iframe>
+        <!-- <iframe src="/#/demo/components/button" frameborder="0" class="iframe"></iframe> -->
+        <div class="content">
+          <demo/>
+        </div>
     </div>
 </template>
 
 <script>
+let module = window.location.href.split('/').pop().split('?')[0]
+const demo = () => import('../../views/components/' + module + '.vue')
 export default {
   data () {
     return {
     }
+  },
+  components: {
+    demo
   },
   computed: {
     iframeSrc () {
@@ -26,7 +34,7 @@ export default {
         background: url('../../assets/img/iphone.png');
         background-size: cover
     }
-    .iframe{
+    .content{
         position: relative;
         left:20px;
         top:90px;

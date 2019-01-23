@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Doc from '../components/layout/Doc'
+// import Doc from '../components/layout/Doc'
 
 Vue.use(Router)
 

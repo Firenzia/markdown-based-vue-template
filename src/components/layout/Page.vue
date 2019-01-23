@@ -3,7 +3,7 @@
       <Header/>
       <side-bar/>
       <Doc/>
-      <Demo v-show="showDemo"/>
+      <Demo v-if="showDemo"/>
     </div>
 </template>
 
