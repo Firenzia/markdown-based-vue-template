@@ -2,25 +2,32 @@
     <div class="demo">
         <!-- <iframe src="/#/demo/components/button" frameborder="0" class="iframe"></iframe> -->
         <div class="content">
-          <demo/>
+          <component :is="module" v-if="module.length>0"></component>
         </div>
     </div>
 </template>
 
 <script>
-let module = window.location.href.split('/').pop().split('?')[0]
-const demo = () => import('../../views/components/' + module + '.vue')
+
+const button = () => import('../../views/components/button.vue')
 export default {
   data () {
     return {
     }
   },
   components: {
-    demo
+    buttonS: button
   },
   computed: {
     iframeSrc () {
       return this.$route.fullPath.replace('doc', 'demo')
+    },
+    module () {
+      if (/show/.test(window.location.href)) {
+        return window.location.href.split('/').pop().split('?')[0] + 'S'
+      } else {
+        return ''
+      }
     }
   }
 }
