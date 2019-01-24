@@ -8,7 +8,7 @@
 </template>
 
 <script>
-
+//  使用异步组件
 const button = () => import('../../views/components/button.vue')
 export default {
   data () {

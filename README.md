@@ -51,10 +51,11 @@ export default {
 ```
 
 2. 组件划分
-   
+公共组件  
 ![comp](./public/img/comp-tree.jpg)
 
 ```html
+// Page.vue
 <template>
     <div>
       <Header/>
@@ -73,7 +74,7 @@ export default {
     },
 ```
 
-1. 路由
+3. 路由
 如果想让 Doc区块根据url动态渲染，可以用嵌套路由
 ```html
 // page.vue
@@ -101,5 +102,38 @@ export default {
 
 默认路由激活样式（可修改） .router-link-exact-active, .router-link-active
 
-4. 动态引入组件
-Demo组件用iframe嵌套页面，iframe的src通过computed和当前路由计算出来，从而实现动态引入。
+4. 引入异步组件和动态挂载组件
+
+原来项目的方案是Demo组件用iframe嵌套页面，iframe（设置宽高）的src（需要嵌套的页面url）通过computed和当前路由计算出来，从而实现动态引入，但是这样需要配置一些跟组件相关的url，而直接在浏览器访问页面显示不友好（显示太大），很明显这种实现方式不够优雅。
+
+更好的方案是引入异步组件和动态挂载组件。
+[参考文档](https://cn.vuejs.org/v2/guide/components-dynamic-async.html)
+```html
+<component :is="module" v-if="module.length>0"></component>
+```
+```
+//  使用异步组件
+const button = () => import('../../views/components/button.vue')
+export default {
+  data () {
+    return {
+    }
+  },
+  components: {
+    // buttonS 是因为不能使用内置已有的button, 会冲突，所以加多一个S，后面通过路由参数判断是否显示某个命名S结尾的组件
+    buttonS: button
+  },
+  computed: {
+    iframeSrc () {
+      return this.$route.fullPath.replace('doc', 'demo')
+    },
+    module () {
+      if (/show/.test(window.location.href)) {
+        return window.location.href.split('/').pop().split('?')[0] + 'S'
+      } else {
+        return ''
+      }
+    }
+  }
+}
+```
