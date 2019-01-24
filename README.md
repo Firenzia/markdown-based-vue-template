@@ -1,4 +1,4 @@
-###  介绍
+###  介绍 :strawberry::lemon::cake::melon::sunflower:
 * 类似饿了么的组件库网站，有顶部和侧边导航，核心内容区包括文档和组件UI展示
 * 组件文档区块说明由markdown格式编写
 
@@ -10,7 +10,7 @@
 
 ### 实现
 1. 关于markdown 
-**webpack配置** 为了让用vue-cli3搭建的工程支持markdown, 需要安装相关loader,然后手动增加webpack对markdown的处理,在原目录下新建vue.config.js, 此处不同于vue-cli2生成的模板里面已有webpack配置，cli3没有对外暴露webpack配置。
+**webpack配置** 为了让用vue-cli3搭建的工程支持markdown, 需要安装相关loader,然后手动增加webpack对markdown的处理,在原目录下新建vue.config.js, 此处不同于vue-cli2生成的模板里面已有webpack配置，cli3没有对外暴露webpack配置。 
 ```javascript
 module.exports = {
   chainWebpack: config => {
